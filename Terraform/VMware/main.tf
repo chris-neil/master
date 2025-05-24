@@ -1,3 +1,4 @@
+#https://registry.terraform.io/providers/elsudano/vmworkstation/1.0.2/docs
 
 terraform {
   required_providers {
