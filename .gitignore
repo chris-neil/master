@@ -2,3 +2,4 @@ Terraform/*/terraform.exe
 Terraform/*/.terraform.lock.hcl
 Terraform/*/terraform.tfstate
 Terraform/*/.terraform/providers/*
+Python/test_data/*
