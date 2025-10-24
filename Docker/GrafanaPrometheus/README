@@ -1,0 +1,10 @@
+# Grafana and Prometheus with Docker
+
+docker-compose up -d
+
+Access Grafana: Open your web browser and go to http://localhost:3000
+Change password from admin/admin
+
+In the Grafana UI, go to Connections > Add new connection. Search for and select "Prometheus".
+
+Prometheus server URL, enter http://prometheus:9090. 

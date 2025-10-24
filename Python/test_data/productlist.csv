@@ -1,0 +1,17 @@
+cpe:2.3:h:fortinet:fortigate-1801f:
+cpe:2.3:h:fortinet:fortigate-1101e:
+cpe:2.3:h:fortinet:fortimanager-200d:
+cpe:2.3:h:fortinet:fortimanager_2000e:
+cpe:2.3:h:fortinet:fortianalyzer-1000f:
+cpe:2.3:o:fortinet:fortios:6.4.9:
+cpe:2.3:o:fortinet:fortios:7.2.7:
+cpe:2.3:o:fortinet:fortimanager_firmware:
+cpe:2.3:a:fortinet:fortimanager:7.2.8:
+cpe:2.3:o:fortinet:fortianalyzer_firmware:
+cpe:2.3:a:fortinet:fortianalyzer:7.4.6:
+cpe:2.3:h:cisco:c9300-24s:
+cpe:2.3:h:cisco:firepower_4112:
+cpe:2.3:o:cisco:firepower_4112_firmware:
+cpe:2.3:o:cisco:adaptive_security_appliance_software:9.12.4.47:
+cpe:2.3:o:cisco:adaptive_security_appliance_software:9.16.4.57:
+cpe:2.3:o:cisco:firepower_extensible_operating_system:2.10.1.234:
