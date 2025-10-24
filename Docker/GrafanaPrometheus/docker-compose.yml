@@ -3,6 +3,22 @@ networks:
     driver: bridge
 
 services:
+  otel-collector:
+      image: otel/opentelemetry-collector-contrib:latest
+      container_name: otel-collector
+      # Mount the collector's configuration file
+      volumes:
+        - ./otel-collector-config.yml:/etc/otel-collector-config.yml
+      # Use the command to start the collector with your specific config file
+      command: ["--config=/etc/otel-collector-config.yml"]
+      # Ports for various OTLP receivers (required for sending data to the collector)
+      ports:
+        - "4317:4317" # OTLP gRPC receiver
+        - "4318:4318" # OTLP HTTP receiver
+      networks:
+        - monitoring
+      depends_on:
+        - prometheus # Ensure Prometheus is running for the collector to send metrics
   prometheus:
     image: prom/prometheus:latest
     container_name: prometheus

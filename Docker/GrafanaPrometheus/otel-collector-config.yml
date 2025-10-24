@@ -1,0 +1,31 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+      http:
+
+exporters:
+  # Exporter to send metrics to Prometheus (if your Prometheus is configured to scrape it)
+  prometheus:
+    endpoint: "0.0.0.0:8889"
+
+  # Exporter to see data in the console (REPLACED 'logging' with 'debug')
+  debug: # <--- CORRECT EXPORTER NAME
+    verbosity: detailed # Use 'detailed' for full payload logging, or 'basic'
+
+processors:
+  batch:
+
+service:
+  pipelines:
+    # Pipeline to process traces
+    traces:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [debug] # <--- CORRECT EXPORTER NAME
+
+    # Pipeline to process metrics
+    metrics:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [prometheus, debug] # <--- CORRECT EXPORTER NAME

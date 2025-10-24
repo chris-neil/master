@@ -1,0 +1,11 @@
+services:
+  ansible_dev_box:
+    # Use 'build: .' to tell Docker Compose to build the image from the Dockerfile in the current directory
+    build: . 
+    container_name: ansible-dev-env
+    # Map a local folder to access your playbooks/files inside the container
+    volumes:
+      - ../../Ansible/playbooks:/usr/src/app 
+    
+    # Expose the container's shell command
+    command: ["sleep", "infinity"]
