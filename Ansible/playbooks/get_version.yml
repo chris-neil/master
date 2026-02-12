@@ -1,0 +1,13 @@
+---
+- name: Get version of Check Point Gaia devices
+  gather_facts: false
+  hosts: checkpoint_gaia
+  connection: httpapi
+  tasks:
+    - name: Get version information
+      check_point.gaia.cp_gaia_version_facts:
+      register: version_info
+
+    - name: Display version information
+      debug:
+        var: version_info

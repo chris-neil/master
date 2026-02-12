@@ -1,0 +1,10 @@
+---
+- name: Set Check Point Gaia Message of the Day
+  gather_facts: false
+  hosts: checkpoint_gaia
+  connection: httpapi
+  tasks:
+    - name: Configure the login MOTD banner
+      check_point.gaia.cp_gaia_message_of_the_day:
+        enabled: true
+        msg: "Warning: Private System - Authorized Access Only."

@@ -1,0 +1,48 @@
+---
+# Define a group for all Check Point Gaia devices
+checkpoint_gaia:
+  hosts:
+    # Use a friendly name (e.g., 'cp_firewall') and map it to the IP
+    sms01:
+      ansible_host: 192.168.206.10
+  
+  # Variables that apply to all hosts in this group
+  vars:
+    ansible_network_os: check_point.gaia.checkpoint
+    
+    # Specify the connection type as 'httpapi' for the Gaia API
+    ansible_connection: httpapi 
+    
+    # Use HTTPS (default port is 443)
+    ansible_httpapi_use_ssl: True
+    
+    # Set to False to skip certificate validation if you are using self-signed or lab certificates.
+    ansible_httpapi_validate_certs: False
+    
+    # Gaia API User and Password
+    ansible_user: admin
+    ansible_password: Admin123
+
+# Define a group for all Check Point Gaia devices
+checkpoint_mgmt:
+  hosts:
+    # Use a friendly name (e.g., 'cp_firewall') and map it to the IP
+    sms01:
+      ansible_host: 192.168.206.10
+  
+  # Variables that apply to all hosts in this group
+  vars:
+    ansible_network_os: check_point.mgmt.checkpoint
+    
+    # Specify the connection type as 'httpapi' for the Gaia API
+    ansible_connection: httpapi 
+    
+    # Use HTTPS (default port is 443)
+    ansible_httpapi_use_ssl: True
+    
+    # Set to False to skip certificate validation if you are using self-signed or lab certificates.
+    ansible_httpapi_validate_certs: False
+    
+    # Gaia API User and Password
+    ansible_user: admin
+    ansible_password: Admin123

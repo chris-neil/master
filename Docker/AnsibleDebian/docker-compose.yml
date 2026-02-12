@@ -1,8 +1,8 @@
 services:
-  ansible_dev_box:
+  ansible_debian:
     # Use 'build: .' to tell Docker Compose to build the image from the Dockerfile in the current directory
     build: . 
-    container_name: ansible-dev-env
+    container_name: ansible_debian
     # Map a local folder to access your playbooks/files inside the container
     volumes:
       - ../../Ansible/playbooks:/usr/src/app 
